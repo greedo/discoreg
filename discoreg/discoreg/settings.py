@@ -33,6 +33,9 @@ ALLOWED_HOSTS = [
     "localhost",
 ]
 
+SECURE_SSL_REDIRECT=os.environ.get("SECURE_SSL_REDIRECT", False) == "1"
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
 
 # Application definition
 
