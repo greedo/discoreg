@@ -20,14 +20,14 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "^v2lvne2s4m!no!z)x6rhx%#a6+9p%7o@vj)=3e=(y01dskz)v"
+SECRET_KEY = os.environ["DJANGO_SECRET_KEY"]
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get("DEBUG", False) == "1"
 
 ALLOWED_HOSTS = [
     "pygotham-chat-staging.herokuapp.com",
-    "pygotham-chat-prod.herokuapp.com",
+    "pygotham-chat-production.herokuapp.com",
     "chat.pygotham.tv",
     "tylerdave.ngrok.io",
     "localhost",
@@ -159,7 +159,7 @@ DISCORD_SCOPES = [
     "guilds.join",
 ]
 DISCORD_GUILD_ID = os.environ["DISCORD_GUILD_ID"]
-DISCORD_BOT_CHANNEL = int(os.environ.get("DISCORD_BOT_CHANNEL", "734788395024515153"))
+DISCORD_BOT_CHANNEL = int(os.environ.get("DISCORD_BOT_CHANNEL", "0"))
 DISCORD_BOT_OFFSET_SECONDS = int(os.environ.get("DISCORD_BOT_OFFSET_SECONDS", "0"))
 DISCORD_BOT_TOKEN = os.environ["DISCORD_BOT_TOKEN"]
 DISCORD_BOT_WINDOW_SECONDS = int(os.environ.get("DISCORD_BOT_WINDOW_SECONDS", "30"))
