@@ -11,7 +11,7 @@ from oauthlib.oauth2.rfc6749.errors import InvalidClientIdError
 from requests_oauthlib import OAuth2Session
 
 from ..models import EmailRole
-from .tito import tito_webhook
+from .webhook import webhook_handler
 
 
 DISCORD_API_BASE_URL = settings.DISCORD_API_BASE_URL
