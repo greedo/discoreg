@@ -12,12 +12,11 @@ from ..models import DiscordRole, EmailRole, Registration
 
 logger = logging.getLogger(__name__)
 
-REGISTRAITON_WEBHOOK_TOKEN = settings.REGISTRATION_WEBHOOK_TOKEN
-
+REGISTRATION_WEBHOOK_TOKEN = settings.REGISTRATION_WEBHOOK_TOKEN
 
 @csrf_exempt
 def webhook_handler(request):
-    if not REGISTRATION_WEBOOK_TOKEN:
+    if not REGISTRATION_WEBHOOK_TOKEN:
         raise Exception("No webook token set")
     if request.META.get("HTTP_AUTHORIZATION") != f"Bearer {REGISTRATION_WEBHOOK_TOKEN}":
         return HttpResponse("Unauthorized", status=401)
