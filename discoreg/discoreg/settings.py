@@ -26,8 +26,6 @@ SECRET_KEY = os.environ["DJANGO_SECRET_KEY"]
 DEBUG = os.environ.get("DEBUG", False) == "1"
 
 ALLOWED_HOSTS = [
-    "pygotham-chat-staging.herokuapp.com",
-    "pygotham-chat-production.herokuapp.com",
     "chat.pygotham.tv",
     "tylerdave.ngrok.io",
     "localhost",
