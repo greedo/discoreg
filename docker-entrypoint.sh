@@ -10,4 +10,4 @@ python3 discoreg/manage.py migrate
 
 # Start server
 echo "Starting server"
-gunicorn --pythonpath discoreg discoreg.wsgi --bind 0.0.0.0:80 --log-file -
+gunicorn --pythonpath discoreg discoreg.wsgi --log-file -
